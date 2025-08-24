@@ -53,7 +53,7 @@ Only Docker and Docker Compose are required to run the project.
 
 ### Development
 ```bash
-git clone <repository-url>
+git clone https://github.com/Hatukay/DorkGen
 cd dorkgen-docker
 docker-compose up --build
 ```
