@@ -65,7 +65,7 @@ Projeyi çalıştırmak için yalnızca **Docker** ve **Docker Compose** yeterli
 ### Development
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Hatukay/DorkGen
 cd dorkgen-docker
 docker-compose up --build
 ```
