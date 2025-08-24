@@ -1,2 +1,0 @@
-# DorkGen
-Auto dork generator
