@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/app
+    environment:
+      - GIN_MODE=debug
+      - PORT=8080
+    networks:
+      - dorkgen-network
+    depends_on:
+      - frontend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:8080
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - dorkgen-network
+
+networks:
+  dorkgen-network:
+    driver: bridge
+
+volumes:
+  backend-data:
+  frontend-data:
